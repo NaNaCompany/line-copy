@@ -1,0 +1,70 @@
+{
+  "slug": "line-copy",
+  "url": "https://nanalab.kr/line-copy/",
+  "titles": {
+    "ko": "딱 2초 본 선, 똑같이 그릴 수 있을까?",
+    "en": "Can you copy a line after seeing it for just two seconds?",
+    "zh": "只看两秒的一条线，你能画得一样长吗？",
+    "es": "¿Puedes copiar una línea después de verla dos segundos?"
+  },
+  "descriptions": {
+    "ko": "혼자 즐기고 나만의 결과를 공유하는 작은 게임.",
+    "en": "A small solo game. Play, discover your result, and share.",
+    "zh": "独自挑战，看看自己的成绩，再分享给朋友。",
+    "es": "Un juego para ti. Descubre tu resultado y compártelo."
+  },
+  "color": "#386b78",
+  "cardLines": {
+    "ko": [
+      "2초 동안 본 한 줄.",
+      "같은 길이를 그려라."
+    ],
+    "en": [
+      "Two seconds. One line.",
+      "Can you copy its length?"
+    ],
+    "zh": [
+      "只看两秒的一条线。",
+      "你能复制它的长度吗？"
+    ],
+    "es": [
+      "Dos segundos. Una línea.",
+      "¿Puedes copiar su longitud?"
+    ]
+  },
+  "brands": {
+    "ko": "선 길이 복사 장인",
+    "en": "A Memory of Length",
+    "zh": "线段记忆大师",
+    "es": "Memoria de una línea"
+  },
+  "hero": {
+    "en": {
+      "first": "Two seconds to see a line.",
+      "last": "Can you copy its length?",
+      "intro": [
+        "You get just two seconds to study the line.",
+        "Once it disappears, match its length from memory.",
+        "Three rounds reveal how accurate your eye is."
+      ]
+    },
+    "zh": {
+      "first": "只看两秒的一条线，",
+      "last": "你能画出一样的长度吗？",
+      "intro": [
+        "看清这条线，你只有两秒。",
+        "线消失后，凭记忆还原长度。",
+        "挑战三轮，看看你的目测准确率。"
+      ]
+    },
+    "es": {
+      "first": "Dos segundos para ver una línea.",
+      "last": "¿Puedes copiar su longitud?",
+      "intro": [
+        "Solo tienes dos segundos para observarla.",
+        "Cuando desaparezca, reproduce su longitud de memoria.",
+        "Tres rondas revelan tu precisión visual."
+      ]
+    }
+  }
+}

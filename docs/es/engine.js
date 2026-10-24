@@ -1,0 +1,4 @@
+export function targetLength(rng=Math.random){return 30+rng()*55;}
+export function normalizePointer(x,left,width){if(!Number.isFinite(width)||width<=0)throw new RangeError('Se requiere un ancho de referencia válido.');return Math.max(0,Math.min(100,(x-left)/width*100));}
+export function evaluate(target,copy){if(![target,copy].every(v=>Number.isFinite(v)&&v>=0&&v<=100)||target===0)throw new RangeError('error de rango de longitud');const error=Math.abs(copy-target)/target*100;return {target,copy,error,accuracy:Math.max(0,100-error)};}
+export function summarize(rounds){if(rounds.length!==3)throw new RangeError('Se requieren tres ediciones de registros');const accuracy=rounds.reduce((s,r)=>s+r.accuracy,0)/3;return {accuracy,title:accuracy>=97?'Maestría en copiar a ojo':accuracy>=90?'Un ojo que recuerda líneas':accuracy>=80?'Un ojo bastante preciso':'Explorando longitudes'};}

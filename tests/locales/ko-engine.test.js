@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {targetLength,normalizePointer,evaluate,summarize} from '../../docs/ko/engine.js';
+test('다른 화면 폭에서도 동일 비율로 입력 정규화',()=>{assert.equal(normalizePointer(150,0,300),50);assert.equal(normalizePointer(600,100,1000),50);assert.equal(normalizePointer(-10,0,100),0);assert.equal(normalizePointer(200,0,100),100);});
+test('기준 길이 대비 상대 오차·정확도 하한',()=>{assert.equal(evaluate(40,44).error,10);assert.equal(evaluate(40,40).accuracy,100);assert.equal(evaluate(30,100).accuracy,0);assert.throws(()=>evaluate(0,10));});
+test('세 판 평균과 기준선 범위',()=>{assert.equal(targetLength(()=>0),30);assert.ok(targetLength(()=>.999)<85);assert.equal(summarize([evaluate(50,50),evaluate(50,45),evaluate(50,55)]).accuracy,(100+90+90)/3);assert.throws(()=>summarize([]));});

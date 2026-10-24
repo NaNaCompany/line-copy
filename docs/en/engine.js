@@ -1,0 +1,4 @@
+export function targetLength(rng=Math.random){return 30+rng()*55;}
+export function normalizePointer(x,left,width){if(!Number.isFinite(width)||width<=0)throw new RangeError('A valid reference width is required.');return Math.max(0,Math.min(100,(x-left)/width*100));}
+export function evaluate(target,copy){if(![target,copy].every(v=>Number.isFinite(v)&&v>=0&&v<=100)||target===0)throw new RangeError('length range error');const error=Math.abs(copy-target)/target*100;return {target,copy,error,accuracy:Math.max(0,100-error)};}
+export function summarize(rounds){if(rounds.length!==3)throw new RangeError('Three editions of records required');const accuracy=rounds.reduce((s,r)=>s+r.accuracy,0)/3;return {accuracy,title:accuracy>=97?'A master of visual copying':accuracy>=90?'An eye for lines':accuracy>=80?'A finely tuned eye':'Still exploring lengths'};}

@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {targetLength,normalizePointer,evaluate,summarize} from '../../docs/es/engine.js';
+test('Normalice la entrada a la misma proporción en diferentes anchos de pantalla',()=>{assert.equal(normalizePointer(150,0,300),50);assert.equal(normalizePointer(600,100,1000),50);assert.equal(normalizePointer(-10,0,100),0);assert.equal(normalizePointer(200,0,100),100);});
+test('Límite inferior de error/precisión relativo en comparación con la longitud de referencia',()=>{assert.equal(evaluate(40,44).error,10);assert.equal(evaluate(40,40).accuracy,100);assert.equal(evaluate(30,100).accuracy,0);assert.throws(()=>evaluate(0,10));});
+test('Promedios de tres ediciones y rangos de referencia',()=>{assert.equal(targetLength(()=>0),30);assert.ok(targetLength(()=>.999)<85);assert.equal(summarize([evaluate(50,50),evaluate(50,45),evaluate(50,55)]).accuracy,(100+90+90)/3);assert.throws(()=>summarize([]));});

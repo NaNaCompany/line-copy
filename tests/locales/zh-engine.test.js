@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {targetLength,normalizePointer,evaluate,summarize} from '../../docs/zh/engine.js';
+test('将不同屏幕宽度的输入标准化为相同的比例',()=>{assert.equal(normalizePointer(150,0,300),50);assert.equal(normalizePointer(600,100,1000),50);assert.equal(normalizePointer(-10,0,100),0);assert.equal(normalizePointer(200,0,100),100);});
+test('与参考长度相比的相对误差/精度下限',()=>{assert.equal(evaluate(40,44).error,10);assert.equal(evaluate(40,40).accuracy,100);assert.equal(evaluate(30,100).accuracy,0);assert.throws(()=>evaluate(0,10));});
+test('三个版本的平均值和基线范围',()=>{assert.equal(targetLength(()=>0),30);assert.ok(targetLength(()=>.999)<85);assert.equal(summarize([evaluate(50,50),evaluate(50,45),evaluate(50,55)]).accuracy,(100+90+90)/3);assert.throws(()=>summarize([]));});
